@@ -177,7 +177,8 @@ function rand( min, max ){
 }
 
 function bomba(){
-	for(i=0;i<100;i++)
+	alert("porażkowo :ccc");
+	/*for(i=0;i<100;i++)
 	{
 		document.getElementById("ida"+i).className="defa0";
 	}
@@ -185,8 +186,10 @@ function bomba(){
 	for(i=0;i<ilosc_bomb;i++)
 	{
 		document.getElementById("ida"+bomb[i]).className="bomba_on";
-	}
+	}*/
 	document.getElementById("logo").innerHTML="PORAŻKA"	
+	document.getElementsByClassName("defa").style.opacity=0;
+	
 }
 
 function znikajka(n){
@@ -201,8 +204,18 @@ function znikajka(n){
 		else czy_bomba=klikniety_element.substr(4,2);
 	
 	//alert(czy_bomba);
+	
+	
+	
 	sprawdz_czy_1st_jest_puste();
-	interakcja_z_bomba()
+	//interakcja_z_bomba()
+	for(i=0;i<ilosc_bomb;i++)
+	{
+		//document.getElementById("id"+bomb[i]).className="bomba";
+		document.getElementById("id2a"+bomb[i]).setAttribute("onclick","");			 /*----------*/
+		document.getElementById("id2a"+bomb[i]).setAttribute("onclick","bomba()");			 /*----------*/
+	//	document.getElementById("id2a"+bomb[i]).innerHTML="";
+	}
 }
 
 function umiesc_2_warstwe(){
@@ -215,6 +228,7 @@ function umiesc_2_warstwe(){
 		tresc_diva2=tresc_diva2+'<div class="defa" id=id2a'+i+' onclick="znikajka(this.id)" ></div>';  /* sprawdz_czy_bomba('+i+') */
 	}
 	tresc_diva2=tresc_diva2+'<div style="clear:both;"></div>';
+	
 	
 	document.getElementById("polaIndex2").innerHTML=tresc_diva2;
 }
@@ -266,15 +280,15 @@ function sprawdz_czy_1st_jest_puste(){
 	*/
 }
 
-function interakcja_z_bomba(){
+/*function interakcja_z_bomba(){
 	// if kliknięte id +
 	//	czy_bomba	numerID dla 2 warstwy
 	
 	
-	if(getElementById("id"+czy_bomba).className="bomba") alert("vahevajvhya udalo się :)))))");
+	if(document.getElementById("id"+czy_bomba).className=="bomba") alert("chuj udalo się :)))))");
 		
 	
 	
-}
+}*/
 
 
