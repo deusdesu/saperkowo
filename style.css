@@ -1,0 +1,129 @@
+body
+{
+	background-color:#333;
+	text-align:center;
+	
+}
+
+#conteiner
+{
+	width:900px;
+	height:auto;
+	margin-left:auto;
+	margin-right:auto;	
+}
+
+#logo
+{
+	background-color:#666;
+	width:900px;
+	height:40px;
+	padding-top:8px;
+	padding-bottom:15px;
+	font-size:40px;
+	color:#000;
+	letter-spacing:5px;
+}
+
+#content
+{
+	width:900px;
+	height:auto;
+	/*background-color:#005500;*/
+}
+
+#pola
+{
+	width:450px;
+	margin-left:auto;
+	margin-right:auto;	
+	height:auto;
+}
+
+#polaIndex2
+{
+	
+	width:450px;
+	margin-left:auto;
+	margin-right:auto;	
+	height:auto;
+	position:relative;
+	top:-450px;
+	z-index:2;
+}
+
+#footer
+{
+	float:left;
+}
+
+.bomba
+{
+		width:39px;
+		height:39px;
+		background-color:green;
+		border:3px solid #555;
+		float:left;
+}
+.bomba:hover
+{
+	background-color:#ccc;
+}
+
+.bomba_on
+{
+	width:39px;
+	height:39px;
+	background-color:#ff0000;
+	border:3px solid #555;
+	float:left;
+}
+
+.defa
+{
+		width:39px;
+		height:39px;
+		background-color:#fff;
+		border:3px solid #555;
+		float:left;			
+		opacity:0;
+}
+.defa1
+{
+		width:39px;
+		height:39px;
+		background-color:#000;
+		border:3px solid #555;
+		float:left;			
+}
+.defa:hover
+{
+	background-color:#ccc;
+}
+
+.defa0
+{
+		width:39px;
+		height:39px;
+		background-color:#fff;
+		border:3px solid #555;
+		float:left;		
+}
+
+.numer0
+{
+		width:39px;
+		height:39px;
+		background-color:yellow;
+		border:3px solid #555;
+		float:left;
+		line-height:39px;
+}
+.numer1
+{
+		width:39px;
+		height:39px;
+		background-color:#ffffff;
+		border:3px solid #555;
+		float:left;
+}
