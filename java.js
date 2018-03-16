@@ -1,5 +1,6 @@
 window.onload = start;
-var ilosc_bomb=20;
+var ilosc_bomb=90;
+//var ilosc_bomb_help=ilosc_bomb+5;
 var ilosc_powtorek=0;
 var ilosc_wyznaczonych_bomb=0;
 var klikniety_element;
@@ -44,17 +45,21 @@ function start(){
 }
 	//tresc_fota=tresc_fota+"<br />ilosc_wyznaczonych_bomb= "+ilosc_wyznaczonych_bomb+"<br />ilosc_powtorek= "+ilosc_powtorek;
 function wyznacz_bomby(){
-	for(i=0;i<=ilosc_bomb;i++){
+	for(i=0;i<ilosc_bomb;i++){
 		unikat = rand(0,99);
 		//alert(unikat);
-		for(w=0;w<=ilosc_bomb;w++){
-			if(unikat==bomb[w]|| (unikat == nr_id_2_warstwy) || (unikat == puste_w_okol_1_pola_0) || (unikat == puste_w_okol_1_pola_1) || (unikat == puste_w_okol_1_pola_2) || (unikat == puste_w_okol_1_pola_3) || (unikat == puste_w_okol_1_pola_4) || (unikat == puste_w_okol_1_pola_5) || (unikat == puste_w_okol_1_pola_6) || (unikat == puste_w_okol_1_pola_7)){
-				unikat = rand(0,99);
-				w--;
+		if(i>0){
+			for(w=0;w<=ilosc_bomb;w++){
+				if(unikat==bomb[w] || (unikat == nr_id_2_warstwy) || (unikat == puste_w_okol_1_pola_0) || (unikat == puste_w_okol_1_pola_1) || (unikat == puste_w_okol_1_pola_2) || (unikat == puste_w_okol_1_pola_3) || (unikat == puste_w_okol_1_pola_4) || (unikat == puste_w_okol_1_pola_5) || (unikat == puste_w_okol_1_pola_6) || (unikat == puste_w_okol_1_pola_7)){
+					unikat = rand(0,99);
+					w--;
+				}
 			}
 		}
-		bomb[i] = unikat;	
+		bomb[i] = unikat;
+	ilosc_wyznaczonych_bomb++;		
 	}
+	document.getElementById("footer").innerHTML="Wyznaczyło: "+ilosc_wyznaczonych_bomb;
 
 }
 
@@ -177,7 +182,7 @@ function rand( min, max ){
 }
 
 function bomba(){
-	alert("porażkowo :ccc");
+	//alert("porażkowo :ccc");
 	/*for(i=0;i<100;i++)
 	{
 		document.getElementById("ida"+i).className="defa0";
@@ -188,7 +193,9 @@ function bomba(){
 		document.getElementById("ida"+bomb[i]).className="bomba_on";
 	}*/
 	document.getElementById("logo").innerHTML="PORAŻKA"	
-	document.getElementsByClassName("defa").style.opacity=0;
+	document.getElementById("polaIndex2").innerHTML=""	
+//	document.getElementsByClassName("defa").style.opacity=0;
+	//document.querySelector(".defa").style.opacity=0;
 	
 }
 

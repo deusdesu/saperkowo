@@ -8,7 +8,7 @@ body
 #conteiner
 {
 	width:900px;
-	height:auto;
+	height:600px;
 	margin-left:auto;
 	margin-right:auto;	
 }
@@ -28,7 +28,7 @@ body
 #content
 {
 	width:900px;
-	height:auto;
+	height:900px;
 	/*background-color:#005500;*/
 }
 
@@ -55,6 +55,18 @@ body
 #footer
 {
 	float:left;
+	
+	background-color:#666;
+	width:900px;
+	height:40px;
+	padding-top:8px;
+	padding-bottom:15px;
+	font-size:40px;
+	color:#000;
+	letter-spacing:5px;
+	
+	position:relative;
+	top:-450px;
 }
 
 .bomba
@@ -65,11 +77,11 @@ body
 		border:3px solid #555;
 		float:left;
 }
-.bomba:hover
+/*.bomba:hover
 {
 	background-color:#ccc;
 }
-
+*/
 .bomba_on
 {
 	width:39px;
@@ -86,7 +98,7 @@ body
 		background-color:#fff;
 		border:3px solid #555;
 		float:left;			
-		opacity:1;
+		opacity:0;
 }
 .defa1
 {
