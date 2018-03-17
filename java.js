@@ -1,5 +1,5 @@
 window.onload = start;
-var ilosc_bomb=90;
+var ilosc_bomb=30; //LEPIEJ KURWA NIE WPISUJ TU WIĘCEJ NIŻ 91, BO ŁAPY UPIERDOLE, ZAPIERDOLE CAŁEGO, RODZINE ZABIJĘ, OJCA, BABKĘ, DZIADKA A JAK NIE MASZ DZIADKA TO PRADZIATKA, A JEŻELI MISZKASZ W BLOKU TO UCIERPIĄ NIEWINNI.
 //var ilosc_bomb_help=ilosc_bomb+5;
 var ilosc_powtorek=0;
 var ilosc_wyznaczonych_bomb=0;
@@ -23,6 +23,12 @@ var czy_bomba;
 	var puste_w_okol_1_pola_6=puste_w_okol_1_pola_6/1;
 	var puste_w_okol_1_pola_7=puste_w_okol_1_pola_7/1;
 
+// tablica wypełniona  zerami, zwiększaj pole o 1 za każdym razem kiedy liczba równa jego indeksowi zostanie wylosowana (to się dzieje potem ;) )
+var bomb_czy_zostala_wylosowana = new Array(99);
+for(i=0;i<100;i++)
+	{
+		bomb_czy_zostala_wylosowana[i]=0;
+	}
 /*---------------------------------------------------------------------------------------------------------------*/
 	
 function start(){
@@ -44,22 +50,25 @@ function start(){
 	umiesc_2_warstwe();
 }
 	//tresc_fota=tresc_fota+"<br />ilosc_wyznaczonych_bomb= "+ilosc_wyznaczonych_bomb+"<br />ilosc_powtorek= "+ilosc_powtorek;
+
 function wyznacz_bomby(){
+	var unikat;
+	var ilosc_powtorzen_w_petli=0;
+	
 	for(i=0;i<ilosc_bomb;i++){
-		unikat = rand(0,99);
-		//alert(unikat);
-		if(i>0){
-			for(w=0;w<=ilosc_bomb;w++){
-				if(unikat==bomb[w] || (unikat == nr_id_2_warstwy) || (unikat == puste_w_okol_1_pola_0) || (unikat == puste_w_okol_1_pola_1) || (unikat == puste_w_okol_1_pola_2) || (unikat == puste_w_okol_1_pola_3) || (unikat == puste_w_okol_1_pola_4) || (unikat == puste_w_okol_1_pola_5) || (unikat == puste_w_okol_1_pola_6) || (unikat == puste_w_okol_1_pola_7)){
-					unikat = rand(0,99);
-					w--;
-				}
+		for(;;){
+			unikat = rand(0,99);
+			if(bomb_czy_zostala_wylosowana[unikat]==0 && unikat != nr_id_2_warstwy && unikat != puste_w_okol_1_pola_0 && unikat != puste_w_okol_1_pola_1 && unikat != puste_w_okol_1_pola_2 && unikat != puste_w_okol_1_pola_3 && unikat != puste_w_okol_1_pola_4 && unikat != puste_w_okol_1_pola_5 && unikat != puste_w_okol_1_pola_6 && unikat != puste_w_okol_1_pola_7){
+				bomb_czy_zostala_wylosowana[unikat]++;
+				break;
 			}
+			ilosc_powtorzen_w_petli++;
+			
 		}
 		bomb[i] = unikat;
-	ilosc_wyznaczonych_bomb++;		
+		ilosc_wyznaczonych_bomb++;		
 	}
-	document.getElementById("footer").innerHTML="Wyznaczyło: "+ilosc_wyznaczonych_bomb;
+	document.getElementById("footer").innerHTML="Wyznaczyło: "+ilosc_wyznaczonych_bomb+"<br />"+"ilosc_powtorzen_w_petli: "+ilosc_powtorzen_w_petli;
 
 }
 
