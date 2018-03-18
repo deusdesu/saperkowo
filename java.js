@@ -1,5 +1,5 @@
 window.onload = start;
-var ilosc_bomb=30; //LEPIEJ KURWA NIE WPISUJ TU WIĘCEJ NIŻ 91, BO ŁAPY UPIERDOLE, ZAPIERDOLE CAŁEGO, RODZINE ZABIJĘ, OJCA, BABKĘ, DZIADKA A JAK NIE MASZ DZIADKA TO PRADZIATKA, A JEŻELI MISZKASZ W BLOKU TO UCIERPIĄ NIEWINNI.
+var ilosc_bomb=10; //LEPIEJ KURWA NIE WPISUJ TU WIĘCEJ NIŻ 91, BO ŁAPY UPIERDOLE, ZAPIERDOLE CAŁEGO, RODZINE ZABIJĘ, OJCA, BABKĘ, DZIADKA A JAK NIE MASZ DZIADKA TO PRADZIADKA, A JEŻELI MISZKASZ W BLOKU TO UCIERPIĄ NIEWINNI.
 //var ilosc_bomb_help=ilosc_bomb+5;
 var ilosc_powtorek=0;
 var ilosc_wyznaczonych_bomb=0;
@@ -296,15 +296,17 @@ function sprawdz_czy_1st_jest_puste(){
 	*/
 }
 
-/*function interakcja_z_bomba(){
-	// if kliknięte id +
-	//	czy_bomba	numerID dla 2 warstwy
-	
-	
-	if(document.getElementById("id"+czy_bomba).className=="bomba") alert("chuj udalo się :)))))");
+/*
+	DO ZROBIENIA
+	potrzeba jeszcze:
+		#jeżeli wszystkie pola oprócz bomb zostały wykryte to wygranko!
+		czyli klasy "defa1" "numer0" to wygranko
 		
-	
-	
-}*/
+		#odkrywanie pól o class "defa1" tj:
+			jeżeli wokół klikniętego pola nie ma bomb bomby lub numeru to sprawdza pola naokoło (tak na prawdę to korzysta z zależności napisanych w funkcji "mod_numer()" i jeżeli napotka bombe lub numer0 to odkrywa to i nie leci dalej. Jeżeli napotka defa1 to wywołuje samą siebie tylko dla elementu defa1 )
+		
+		#możliwość wpisania ile bomba ma wylosować, wielkości planszy, timing,  etc;
+*/
+
 
 
