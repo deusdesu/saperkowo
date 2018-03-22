@@ -98,7 +98,26 @@ body
 		background-color:#fff;
 		border:3px solid #555;
 		float:left;			
-		opacity:0;
+		opacity:1;
+}
+.defa_po_wygranej
+{
+		width:39px;
+		height:39px;
+		background-color:#fff;
+		border:3px solid #555;
+		float:left;			
+		opacity:1;
+}
+
+.kafel_przezroczysty
+{
+		width:39px;
+		height:39px;
+		/*background-color:#fff;*/
+		border:3px solid #555;
+		float:left;			
+		opacity:1;
 }
 .defa1
 {
@@ -108,6 +127,16 @@ body
 		border:3px solid #555;
 		float:left;			
 }
+
+.defa_ponizej_przezroczysty
+{
+		width:39px;
+		height:39px;
+		background-color:#000;
+		border:3px solid #555;
+		float:left;			
+}
+
 .defa:hover
 {
 	background-color:#ccc;
@@ -139,3 +168,4 @@ body
 		border:3px solid #555;
 		float:left;
 }
+
