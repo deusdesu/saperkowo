@@ -1,6 +1,6 @@
 window.onload = start;
 var stan_gry="w trakcie";
-var ilosc_bomb=10; //LEPIEJ KURWA NIE WPISUJ TU WIĘCEJ NIŻ 91, BO ŁAPY UPIERDOLE, ZAPIERDOLE CAŁEGO, RODZINE ZABIJĘ, OJCA, BABKĘ, DZIADKA A JAK NIE MASZ DZIADKA TO PRADZIADKA, A JEŻELI MISZKASZ W BLOKU TO UCIERPIĄ NIEWINNI.
+var ilosc_bomb=1; //LEPIEJ KURWA NIE WPISUJ TU WIĘCEJ NIŻ 91, BO ŁAPY UPIERDOLE, ZAPIERDOLE CAŁEGO, RODZINE ZABIJĘ, OJCA, BABKĘ, DZIADKA A JAK NIE MASZ DZIADKA TO PRADZIADKA, A JEŻELI MISZKASZ W BLOKU TO UCIERPIĄ NIEWINNI.
 //var ilosc_bomb_help=ilosc_bomb+5;
 var ilosc_powtorek=0;
 var ilosc_wyznaczonych_bomb=0;
@@ -251,19 +251,18 @@ function znikajka(n){
 	//	document.getElementById("id2a"+bomb[i]).innerHTML="";
 	}
 	
-	// W Y G R A N K O
-	var pomoc=0;
-	for(i=0;i<100;i++){
-		if(document.getElementById("id2a"+i).className=="kafel_przezroczysty")pomoc++;
-	}
-	ilosc_kafel_przezroczysty=pomoc;
-	wygrana();
+
+	
 	
 	// tu miejsce na kod odsłaniający wiele kafelków
 	
 	if(document.getElementById("id"+nr_id_kliknietego_elementu).className=="defa1"){
 		odsloniecie(nr_id_kliknietego_elementu);
 	}
+	// W Y G R A N K O	
+	ilosc_przezroczysty();
+	wygrana();
+		
 	
 }
 
@@ -793,10 +792,16 @@ function odsloniecie(nr){
 			}
 			
 		}
-	
+	wygrana();
 }
 
-
+function ilosc_przezroczysty(){
+	var pomoc=0;
+	for(i=0;i<100;i++){
+		if(document.getElementById("id2a"+i).className=="kafel_przezroczysty")pomoc++;
+	}
+	ilosc_kafel_przezroczysty=pomoc;
+}
 /*
 	DO ZROBIENIA
 	potrzeba jeszcze:
